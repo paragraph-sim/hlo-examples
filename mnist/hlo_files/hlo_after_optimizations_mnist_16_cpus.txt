@@ -1,0 +1,273 @@
+HloModule pmap_spmd_update__3.268
+
+%primitive_computation_add.146 (parameter.147: f32[], parameter.148: f32[]) -> f32[] {
+  %parameter.147 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.148 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.149 = f32[] add(f32[] %parameter.147, f32[] %parameter.148), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.166 (parameter.167: f32[], parameter.168: f32[]) -> f32[] {
+  %parameter.167 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.168 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.169 = f32[] add(f32[] %parameter.167, f32[] %parameter.168), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.186 (parameter.187: f32[], parameter.188: f32[]) -> f32[] {
+  %parameter.187 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.188 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.189 = f32[] add(f32[] %parameter.187, f32[] %parameter.188), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.201 (parameter.202: f32[], parameter.203: f32[]) -> f32[] {
+  %parameter.202 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.203 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.204 = f32[] add(f32[] %parameter.202, f32[] %parameter.203), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.208 (parameter.209: f32[], parameter.210: f32[]) -> f32[] {
+  %parameter.209 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.210 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.211 = f32[] add(f32[] %parameter.209, f32[] %parameter.210), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.215 (parameter.216: f32[], parameter.217: f32[]) -> f32[] {
+  %parameter.216 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.217 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.218 = f32[] add(f32[] %parameter.216, f32[] %parameter.217), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.222 (parameter.223: f32[], parameter.224: f32[]) -> f32[] {
+  %parameter.223 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.224 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.225 = f32[] add(f32[] %parameter.223, f32[] %parameter.224), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.229 (parameter.230: f32[], parameter.231: f32[]) -> f32[] {
+  %parameter.230 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.231 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.232 = f32[] add(f32[] %parameter.230, f32[] %parameter.231), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.236 (parameter.237: f32[], parameter.238: f32[]) -> f32[] {
+  %parameter.237 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.238 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.239 = f32[] add(f32[] %parameter.237, f32[] %parameter.238), metadata={op_type="add" op_name="add"}
+}
+
+%fused_computation (param_0: f32[10], param_1.1: f32[10]) -> f32[10] {
+  %param_0 = f32[10]{0} parameter(0)
+  %param_1.1 = f32[10]{0} parameter(1)
+  %constant.5 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.9 = f32[10]{0} broadcast(f32[] %constant.5), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.1 = f32[10]{0} multiply(f32[10]{0} %param_1.1, f32[10]{0} %broadcast.9), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.0 = f32[10]{0} subtract(f32[10]{0} %param_0, f32[10]{0} %multiply.1), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%fused_computation.1 (param_0.1: f32[1024,10], param_1.3: f32[1024,10]) -> f32[1024,10] {
+  %param_0.1 = f32[1024,10]{1,0} parameter(0)
+  %param_1.3 = f32[1024,10]{1,0} parameter(1)
+  %constant.6 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.10 = f32[1024,10]{1,0} broadcast(f32[] %constant.6), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.2 = f32[1024,10]{1,0} multiply(f32[1024,10]{1,0} %param_1.3, f32[1024,10]{1,0} %broadcast.10), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.1 = f32[1024,10]{1,0} subtract(f32[1024,10]{1,0} %param_0.1, f32[1024,10]{1,0} %multiply.2), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%fused_computation.2 (param_0.2: f32[1024], param_1.5: f32[1024]) -> f32[1024] {
+  %param_0.2 = f32[1024]{0} parameter(0)
+  %param_1.5 = f32[1024]{0} parameter(1)
+  %constant.7 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.12 = f32[1024]{0} broadcast(f32[] %constant.7), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.3 = f32[1024]{0} multiply(f32[1024]{0} %param_1.5, f32[1024]{0} %broadcast.12), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.2 = f32[1024]{0} subtract(f32[1024]{0} %param_0.2, f32[1024]{0} %multiply.3), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%fused_computation.4 (param_0.4: f32[1024], param_1.9: f32[1024]) -> f32[1024] {
+  %param_0.4 = f32[1024]{0} parameter(0)
+  %param_1.9 = f32[1024]{0} parameter(1)
+  %constant.10 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.15 = f32[1024]{0} broadcast(f32[] %constant.10), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.5 = f32[1024]{0} multiply(f32[1024]{0} %param_1.9, f32[1024]{0} %broadcast.15), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.4 = f32[1024]{0} subtract(f32[1024]{0} %param_0.4, f32[1024]{0} %multiply.5), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%fused_computation.6 (param_0.7: f32[6,1024], param_1.14: f32[6,1024]) -> f32[6,1024] {
+  %param_1.14 = f32[6,1024]{1,0} parameter(1)
+  %constant.12 = f32[] constant(1), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %broadcast.18 = f32[6,1024]{1,0} broadcast(f32[] %constant.12), dimensions={}, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %param_0.7 = f32[6,1024]{1,0} parameter(0)
+  %subtract.6 = f32[6,1024]{1,0} subtract(f32[6,1024]{1,0} %broadcast.18, f32[6,1024]{1,0} %param_0.7), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %multiply.8 = f32[6,1024]{1,0} multiply(f32[6,1024]{1,0} %param_1.14, f32[6,1024]{1,0} %subtract.6), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=127}
+  %multiply.7 = f32[6,1024]{1,0} multiply(f32[6,1024]{1,0} %multiply.8, f32[6,1024]{1,0} %param_0.7), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=127}
+  ROOT %add.0 = f32[6,1024]{1,0} add(f32[6,1024]{1,0} %multiply.8, f32[6,1024]{1,0} %multiply.7), metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+}
+
+%fused_computation.7 (param_0.9: f32[6,1024], param_1.17: f32[6,1024]) -> f32[6,1024] {
+  %param_1.17 = f32[6,1024]{1,0} parameter(1)
+  %constant.13 = f32[] constant(1), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %broadcast.19 = f32[6,1024]{1,0} broadcast(f32[] %constant.13), dimensions={}, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %param_0.9 = f32[6,1024]{1,0} parameter(0)
+  %subtract.7 = f32[6,1024]{1,0} subtract(f32[6,1024]{1,0} %broadcast.19, f32[6,1024]{1,0} %param_0.9), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=127}
+  %multiply.10 = f32[6,1024]{1,0} multiply(f32[6,1024]{1,0} %param_1.17, f32[6,1024]{1,0} %subtract.7), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=127}
+  %multiply.9 = f32[6,1024]{1,0} multiply(f32[6,1024]{1,0} %multiply.10, f32[6,1024]{1,0} %param_0.9), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=127}
+  ROOT %add.1 = f32[6,1024]{1,0} add(f32[6,1024]{1,0} %multiply.10, f32[6,1024]{1,0} %multiply.9), metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+}
+
+%fused_computation.8 (param_0.11: f32[6,10], param_1.21: f32[6], param_2.21: f32[6,10]) -> f32[6,10] {
+  %constant.14 = f32[] constant(-0.166666672), metadata={op_type="div" op_name="pmap(spmd_update)/div" source_file="mnist.py" source_line=136}
+  %broadcast.23 = f32[6,10]{1,0} broadcast(f32[] %constant.14), dimensions={}, metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(0,)\n                                    shape=(6, 10) ]" source_file="mnist.py" source_line=136}
+  %param_2.21 = f32[6,10]{1,0} parameter(2)
+  %multiply.12 = f32[6,10]{1,0} multiply(f32[6,10]{1,0} %broadcast.23, f32[6,10]{1,0} %param_2.21), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=136}
+  %param_1.21 = f32[6]{0} parameter(1)
+  %broadcast.21 = f32[6,10]{1,0} broadcast(f32[6]{0} %param_1.21), dimensions={0}, metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(0,)\n                                    shape=(6, 10) ]" source_file="mnist.py" source_line=131}
+  %param_0.11 = f32[6,10]{1,0} parameter(0)
+  %multiply.11 = f32[6,10]{1,0} multiply(f32[6,10]{1,0} %broadcast.21, f32[6,10]{1,0} %param_0.11), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=131}
+  ROOT %add.2 = f32[6,10]{1,0} add(f32[6,10]{1,0} %multiply.12, f32[6,10]{1,0} %multiply.11), metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+}
+
+%primitive_computation_add.62 (parameter.63: f32[], parameter.64: f32[]) -> f32[] {
+  %parameter.63 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.64 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.65 = f32[] add(f32[] %parameter.63, f32[] %parameter.64), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.128 (parameter.129: f32[], parameter.130: f32[]) -> f32[] {
+  %parameter.129 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.130 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.131 = f32[] add(f32[] %parameter.129, f32[] %parameter.130), metadata={op_type="add" op_name="add"}
+}
+
+%fused_computation.9 (param_0.13: f32[6,10], param_1.28: f32[6,10]) -> f32[6] {
+  %constant.17 = f32[] constant(-0.166666672), metadata={op_type="div" op_name="pmap(spmd_update)/div" source_file="mnist.py" source_line=136}
+  %broadcast.24 = f32[6,10]{1,0} broadcast(f32[] %constant.17), dimensions={}, metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(0,)\n                                    shape=(6, 10) ]" source_file="mnist.py" source_line=136}
+  %param_1.28 = f32[6,10]{1,0} parameter(1)
+  %multiply.13 = f32[6,10]{1,0} multiply(f32[6,10]{1,0} %broadcast.24, f32[6,10]{1,0} %param_1.28), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=136}
+  %negate.0 = f32[6,10]{1,0} negate(f32[6,10]{1,0} %multiply.13), metadata={op_type="neg" op_name="pmap(spmd_update)/neg" source_file="mnist.py" source_line=131}
+  %constant.15 = f32[] constant(0), metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                    shape=(6, 1) ]" source_file="mnist.py" source_line=131}
+  %reduce.1 = f32[6]{0} reduce(f32[6,10]{1,0} %negate.0, f32[] %constant.15), dimensions={1}, to_apply=%primitive_computation_add.128, metadata={op_type="reduce_sum" op_name="pmap(spmd_update)/reduce_sum[ axes=(1,) ]" source_file="mnist.py" source_line=131}
+  %param_0.13 = f32[6,10]{1,0} parameter(0)
+  %reduce.0 = f32[6]{0} reduce(f32[6,10]{1,0} %param_0.13, f32[] %constant.15), dimensions={1}, to_apply=%primitive_computation_add.62, metadata={op_type="reduce_sum" op_name="pmap(spmd_update)/reduce_sum[ axes=(1,) ]" source_file="mnist.py" source_line=131}
+  ROOT %divide.1 = f32[6]{0} divide(f32[6]{0} %reduce.1, f32[6]{0} %reduce.0), metadata={op_type="div" op_name="pmap(spmd_update)/div" source_file="mnist.py" source_line=131}
+}
+
+%fused_computation.10 (param_0.17: f32[6], param_1.36: f32[6,10], param_2.30: f32[10]) -> f32[6,10] {
+  %param_1.36 = f32[6,10]{1,0} parameter(1)
+  %param_2.30 = f32[10]{0} parameter(2)
+  %broadcast.28 = f32[6,10]{1,0} broadcast(f32[10]{0} %param_2.30), dimensions={1}, metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=130}
+  %add.3 = f32[6,10]{1,0} add(f32[6,10]{1,0} %param_1.36, f32[6,10]{1,0} %broadcast.28), metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=130}
+  %param_0.17 = f32[6]{0} parameter(0)
+  %reshape.24 = f32[6,1]{1,0} reshape(f32[6]{0} %param_0.17), metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(0,)\n                                    shape=(6, 1) ]" source_file="mnist.py" source_line=131}
+  %is-finite.0 = pred[6,1]{1,0} is-finite(f32[6,1]{1,0} %reshape.24), metadata={op_type="is_finite" op_name="pmap(spmd_update)/is_finite" source_file="mnist.py" source_line=131}
+  %constant.18 = f32[] constant(0), metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                    shape=(6, 1) ]" source_file="mnist.py" source_line=131}
+  %broadcast.27 = f32[6,1]{1,0} broadcast(f32[] %constant.18), dimensions={}, metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                    shape=(6, 1) ]" source_file="mnist.py" source_line=131}
+  %select.2 = f32[6,1]{1,0} select(pred[6,1]{1,0} %is-finite.0, f32[6,1]{1,0} %reshape.24, f32[6,1]{1,0} %broadcast.27), metadata={op_type="select" op_name="pmap(spmd_update)/select" source_file="mnist.py" source_line=131}
+  %reshape.23 = f32[6]{0} reshape(f32[6,1]{1,0} %select.2), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=131}
+  %broadcast.25 = f32[6,10]{1,0} broadcast(f32[6]{0} %reshape.23), dimensions={0}, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=131}
+  %subtract.8 = f32[6,10]{1,0} subtract(f32[6,10]{1,0} %add.3, f32[6,10]{1,0} %broadcast.25), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=131}
+  ROOT %exponential.0 = f32[6,10]{1,0} exponential(f32[6,10]{1,0} %subtract.8), metadata={op_type="exp" op_name="pmap(spmd_update)/exp" source_file="mnist.py" source_line=131}
+}
+
+%primitive_computation_max.34 (parameter.35: f32[], parameter.36: f32[]) -> f32[] {
+  %parameter.35 = f32[] parameter(0), metadata={op_type="max" op_name="max"}
+  %parameter.36 = f32[] parameter(1), metadata={op_type="max" op_name="max"}
+  ROOT %maximum.37 = f32[] maximum(f32[] %parameter.35, f32[] %parameter.36), metadata={op_type="max" op_name="max"}
+}
+
+%fused_computation.11 (param_0.20: f32[6,10], param_1.40: f32[10]) -> f32[6] {
+  %param_0.20 = f32[6,10]{1,0} parameter(0)
+  %param_1.40 = f32[10]{0} parameter(1)
+  %broadcast.30 = f32[6,10]{1,0} broadcast(f32[10]{0} %param_1.40), dimensions={1}, metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=130}
+  %add.4 = f32[6,10]{1,0} add(f32[6,10]{1,0} %param_0.20, f32[6,10]{1,0} %broadcast.30), metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=130}
+  %constant.19 = f32[] constant(-inf), metadata={op_type="reduce_max" op_name="pmap(spmd_update)/reduce_max[ axes=(1,) ]" source_file="mnist.py" source_line=131}
+  ROOT %reduce.2 = f32[6]{0} reduce(f32[6,10]{1,0} %add.4, f32[] %constant.19), dimensions={1}, to_apply=%primitive_computation_max.34, metadata={op_type="reduce_max" op_name="pmap(spmd_update)/reduce_max[ axes=(1,) ]" source_file="mnist.py" source_line=131}
+}
+
+%fused_computation.12 (param_0.22: f32[6,1024], param_1.42: f32[1024]) -> f32[6,1024] {
+  %param_0.22 = f32[6,1024]{1,0} parameter(0)
+  %param_1.42 = f32[1024]{0} parameter(1)
+  %broadcast.32 = f32[6,1024]{1,0} broadcast(f32[1024]{0} %param_1.42), dimensions={1}, metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=126}
+  %add.5 = f32[6,1024]{1,0} add(f32[6,1024]{1,0} %param_0.22, f32[6,1024]{1,0} %broadcast.32), metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=126}
+  ROOT %tanh.0 = f32[6,1024]{1,0} tanh(f32[6,1024]{1,0} %add.5), metadata={op_type="tanh" op_name="pmap(spmd_update)/tanh" source_file="mnist.py" source_line=127}
+}
+
+%fused_computation.13 (param_0.24: f32[6,1024], param_1.44: f32[1024]) -> f32[6,1024] {
+  %param_0.24 = f32[6,1024]{1,0} parameter(0)
+  %param_1.44 = f32[1024]{0} parameter(1)
+  %broadcast.33 = f32[6,1024]{1,0} broadcast(f32[1024]{0} %param_1.44), dimensions={1}, metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=126}
+  %add.6 = f32[6,1024]{1,0} add(f32[6,1024]{1,0} %param_0.24, f32[6,1024]{1,0} %broadcast.33), metadata={op_type="add" op_name="pmap(spmd_update)/add" source_file="mnist.py" source_line=126}
+  ROOT %tanh.1 = f32[6,1024]{1,0} tanh(f32[6,1024]{1,0} %add.6), metadata={op_type="tanh" op_name="pmap(spmd_update)/tanh" source_file="mnist.py" source_line=127}
+}
+
+%fused_computation.3.clone (param_0.25: f32[1024,1024], param_1.45: f32[1024,1024]) -> f32[1024,1024] {
+  %param_0.25 = f32[1024,1024]{1,0} parameter(0)
+  %param_1.45 = f32[1024,1024]{1,0} parameter(1)
+  %constant.20 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.34 = f32[1024,1024]{1,0} broadcast(f32[] %constant.20), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.14 = f32[1024,1024]{1,0} multiply(f32[1024,1024]{1,0} %param_1.45, f32[1024,1024]{1,0} %broadcast.34), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.9 = f32[1024,1024]{1,0} subtract(f32[1024,1024]{1,0} %param_0.25, f32[1024,1024]{1,0} %multiply.14), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%parallel_fusion.3 (p: f32[1024,1024], p.1: f32[1024,1024]) -> f32[1024,1024] {
+  %p = f32[1024,1024]{1,0} parameter(0)
+  %p.1 = f32[1024,1024]{1,0} parameter(1)
+  ROOT %fusion.3.clone = f32[1024,1024]{1,0} fusion(f32[1024,1024]{1,0} %p, f32[1024,1024]{1,0} %p.1), kind=kLoop, calls=%fused_computation.3.clone, outer_dimension_partitions={9}, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%fused_computation.5.clone (param_0.26: f32[784,1024], param_1.46: f32[784,1024]) -> f32[784,1024] {
+  %param_0.26 = f32[784,1024]{1,0} parameter(0)
+  %param_1.46 = f32[784,1024]{1,0} parameter(1)
+  %constant.21 = f32[] constant(0.001), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %broadcast.35 = f32[784,1024]{1,0} broadcast(f32[] %constant.21), dimensions={}, metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  %multiply.15 = f32[784,1024]{1,0} multiply(f32[784,1024]{1,0} %param_1.46, f32[784,1024]{1,0} %broadcast.35), metadata={op_type="mul" op_name="pmap(spmd_update)/mul" source_file="mnist.py" source_line=246}
+  ROOT %subtract.10 = f32[784,1024]{1,0} subtract(f32[784,1024]{1,0} %param_0.26, f32[784,1024]{1,0} %multiply.15), metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+%parallel_fusion.5 (p.2: f32[784,1024], p.3: f32[784,1024]) -> f32[784,1024] {
+  %p.2 = f32[784,1024]{1,0} parameter(0)
+  %p.3 = f32[784,1024]{1,0} parameter(1)
+  ROOT %fusion.5.clone = f32[784,1024]{1,0} fusion(f32[784,1024]{1,0} %p.2, f32[784,1024]{1,0} %p.3), kind=kLoop, calls=%fused_computation.5.clone, outer_dimension_partitions={9}, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+}
+
+ENTRY %pmap_spmd_update__3.268 (parameter.1: f32[784,1024], parameter.2: f32[1024], parameter.3: f32[1024,1024], parameter.4: f32[1024], parameter.5: f32[1024,10], parameter.6: f32[10], parameter.7: f32[6,784], parameter.8: f32[6,10]) -> (f32[784,1024], f32[1024], f32[1024,1024], f32[1024], f32[1024,10], /*index=5*/f32[10]) {
+  %parameter.1 = f32[784,1024]{1,0} parameter(0), parameter_replication={false}
+  %parameter.7 = f32[6,784]{1,0} parameter(6), parameter_replication={false}
+  %dot.10 = f32[6,1024]{1,0} dot(f32[6,784]{1,0} %parameter.7, f32[784,1024]{1,0} %parameter.1), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_type="dot_general" op_name="pmap(spmd_update)/dot_general[ dimension_numbers=(((1,), (0,)), ((), ()))\n                               precision=None\n                               preferred_element_type=None ]" source_file="mnist.py" source_line=126}
+  %parameter.2 = f32[1024]{0} parameter(1), parameter_replication={false}
+  %fusion.13 = f32[6,1024]{1,0} fusion(f32[6,1024]{1,0} %dot.10, f32[1024]{0} %parameter.2), kind=kLoop, calls=%fused_computation.13, metadata={op_type="tanh" op_name="pmap(spmd_update)/tanh" source_file="mnist.py" source_line=127}
+  %parameter.3 = f32[1024,1024]{1,0} parameter(2), parameter_replication={false}
+  %dot.19 = f32[6,1024]{1,0} dot(f32[6,1024]{1,0} %fusion.13, f32[1024,1024]{1,0} %parameter.3), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_type="dot_general" op_name="pmap(spmd_update)/dot_general[ dimension_numbers=(((1,), (0,)), ((), ()))\n                               precision=None\n                               preferred_element_type=None ]" source_file="mnist.py" source_line=126}
+  %parameter.4 = f32[1024]{0} parameter(3), parameter_replication={false}
+  %fusion.12 = f32[6,1024]{1,0} fusion(f32[6,1024]{1,0} %dot.19, f32[1024]{0} %parameter.4), kind=kLoop, calls=%fused_computation.12, metadata={op_type="tanh" op_name="pmap(spmd_update)/tanh" source_file="mnist.py" source_line=127}
+  %parameter.5 = f32[1024,10]{1,0} parameter(4), parameter_replication={false}
+  %dot.28 = f32[6,10]{1,0} dot(f32[6,1024]{1,0} %fusion.12, f32[1024,10]{1,0} %parameter.5), lhs_contracting_dims={1}, rhs_contracting_dims={0}, metadata={op_type="dot_general" op_name="pmap(spmd_update)/dot_general[ dimension_numbers=(((1,), (0,)), ((), ()))\n                               precision=None\n                               preferred_element_type=None ]" source_file="mnist.py" source_line=130}
+  %parameter.6 = f32[10]{0} parameter(5), parameter_replication={false}
+  %fusion.11 = f32[6]{0} fusion(f32[6,10]{1,0} %dot.28, f32[10]{0} %parameter.6), kind=kLoop, calls=%fused_computation.11, metadata={op_type="reduce_max" op_name="pmap(spmd_update)/reduce_max[ axes=(1,) ]" source_file="mnist.py" source_line=131}
+  %fusion.10 = f32[6,10]{1,0} fusion(f32[6]{0} %fusion.11, f32[6,10]{1,0} %dot.28, f32[10]{0} %parameter.6), kind=kLoop, calls=%fused_computation.10, metadata={op_type="exp" op_name="pmap(spmd_update)/exp" source_file="mnist.py" source_line=131}
+  %parameter.8 = f32[6,10]{1,0} parameter(7), parameter_replication={false}
+  %fusion.9 = f32[6]{0} fusion(f32[6,10]{1,0} %fusion.10, f32[6,10]{1,0} %parameter.8), kind=kLoop, calls=%fused_computation.9, metadata={op_type="div" op_name="pmap(spmd_update)/div" source_file="mnist.py" source_line=131}
+  %fusion.8 = f32[6,10]{1,0} fusion(f32[6,10]{1,0} %fusion.10, f32[6]{0} %fusion.9, f32[6,10]{1,0} %parameter.8), kind=kLoop, calls=%fused_computation.8, metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+  %dot.161 = f32[6,1024]{1,0} dot(f32[6,10]{1,0} %fusion.8, f32[1024,10]{1,0} %parameter.5), lhs_contracting_dims={1}, rhs_contracting_dims={1}, metadata={op_type="dot_general" op_name="pmap(spmd_update)/dot_general[ dimension_numbers=(((1,), (1,)), ((), ()))\n                               precision=None\n                               preferred_element_type=None ]" source_file="mnist.py" source_line=130}
+  %fusion.7 = f32[6,1024]{1,0} fusion(f32[6,1024]{1,0} %fusion.12, f32[6,1024]{1,0} %dot.161), kind=kLoop, calls=%fused_computation.7, metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+  %dot.181 = f32[6,1024]{1,0} dot(f32[6,1024]{1,0} %fusion.7, f32[1024,1024]{1,0} %parameter.3), lhs_contracting_dims={1}, rhs_contracting_dims={1}, metadata={op_type="dot_general" op_name="pmap(spmd_update)/dot_general[ dimension_numbers=(((1,), (1,)), ((), ()))\n                               precision=None\n                               preferred_element_type=None ]" source_file="mnist.py" source_line=126}
+  %fusion.6 = f32[6,1024]{1,0} fusion(f32[6,1024]{1,0} %fusion.13, f32[6,1024]{1,0} %dot.181), kind=kLoop, calls=%fused_computation.6, metadata={op_type="add_any" op_name="pmap(spmd_update)/add_any" source_file="mnist.py" source_line=242}
+  %dot = f32[784,1024]{1,0} dot(f32[6,784]{1,0} %parameter.7, f32[6,1024]{1,0} %fusion.6), lhs_contracting_dims={0}, rhs_contracting_dims={0}, metadata={op_type="transpose" op_name="pmap(spmd_update)/transpose[ permutation=(1, 0) ]" source_file="mnist.py" source_line=126}
+  %all-reduce.205 = f32[784,1024]{1,0} all-reduce(f32[784,1024]{1,0} %dot), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.201, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %call.1 = f32[784,1024]{1,0} call(f32[784,1024]{1,0} %parameter.1, f32[784,1024]{1,0} %all-reduce.205), to_apply=%parallel_fusion.5
+  %constant.52 = f32[] constant(0), metadata={op_type="broadcast_in_dim" op_name="pmap(spmd_update)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                    shape=(6, 1) ]" source_file="mnist.py" source_line=131}
+  %reduce.190 = f32[1024]{0} reduce(f32[6,1024]{1,0} %fusion.6, f32[] %constant.52), dimensions={0}, to_apply=%primitive_computation_add.186, metadata={op_type="reduce_sum" op_name="pmap(spmd_update)/reduce_sum[ axes=(0,) ]" source_file="mnist.py" source_line=126}
+  %all-reduce.212 = f32[1024]{0} all-reduce(f32[1024]{0} %reduce.190), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.208, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %fusion.4 = f32[1024]{0} fusion(f32[1024]{0} %parameter.2, f32[1024]{0} %all-reduce.212), kind=kLoop, calls=%fused_computation.4, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+  %dot.1 = f32[1024,1024]{1,0} dot(f32[6,1024]{1,0} %fusion.13, f32[6,1024]{1,0} %fusion.7), lhs_contracting_dims={0}, rhs_contracting_dims={0}, metadata={op_type="transpose" op_name="pmap(spmd_update)/transpose[ permutation=(1, 0) ]" source_file="mnist.py" source_line=126}
+  %all-reduce.219 = f32[1024,1024]{1,0} all-reduce(f32[1024,1024]{1,0} %dot.1), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.215, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %call = f32[1024,1024]{1,0} call(f32[1024,1024]{1,0} %parameter.3, f32[1024,1024]{1,0} %all-reduce.219), to_apply=%parallel_fusion.3
+  %reduce.170 = f32[1024]{0} reduce(f32[6,1024]{1,0} %fusion.7, f32[] %constant.52), dimensions={0}, to_apply=%primitive_computation_add.166, metadata={op_type="reduce_sum" op_name="pmap(spmd_update)/reduce_sum[ axes=(0,) ]" source_file="mnist.py" source_line=126}
+  %all-reduce.226 = f32[1024]{0} all-reduce(f32[1024]{0} %reduce.170), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.222, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %fusion.2 = f32[1024]{0} fusion(f32[1024]{0} %parameter.4, f32[1024]{0} %all-reduce.226), kind=kLoop, calls=%fused_computation.2, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+  %dot.2 = f32[1024,10]{1,0} dot(f32[6,1024]{1,0} %fusion.12, f32[6,10]{1,0} %fusion.8), lhs_contracting_dims={0}, rhs_contracting_dims={0}, metadata={op_type="transpose" op_name="pmap(spmd_update)/transpose[ permutation=(1, 0) ]" source_file="mnist.py" source_line=130}
+  %all-reduce.233 = f32[1024,10]{1,0} all-reduce(f32[1024,10]{1,0} %dot.2), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.229, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %fusion.1 = f32[1024,10]{1,0} fusion(f32[1024,10]{1,0} %parameter.5, f32[1024,10]{1,0} %all-reduce.233), kind=kLoop, calls=%fused_computation.1, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+  %reduce.150 = f32[10]{0} reduce(f32[6,10]{1,0} %fusion.8, f32[] %constant.52), dimensions={0}, to_apply=%primitive_computation_add.146, metadata={op_type="reduce_sum" op_name="pmap(spmd_update)/reduce_sum[ axes=(0,) ]" source_file="mnist.py" source_line=130}
+  %all-reduce.240 = f32[10]{0} all-reduce(f32[10]{0} %reduce.150), replica_groups={{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}}, to_apply=%primitive_computation_add.236, metadata={op_type="psum" op_name="pmap(spmd_update)/psum[ axes=(\'batch\',)\n                        axis_index_groups=None ]" source_file="mnist.py" source_line=245}
+  %fusion = f32[10]{0} fusion(f32[10]{0} %parameter.6, f32[10]{0} %all-reduce.240), kind=kLoop, calls=%fused_computation, metadata={op_type="sub" op_name="pmap(spmd_update)/sub" source_file="mnist.py" source_line=246}
+  ROOT %tuple.267 = (f32[784,1024]{1,0}, f32[1024]{0}, f32[1024,1024]{1,0}, f32[1024]{0}, f32[1024,10]{1,0}, /*index=5*/f32[10]{0}) tuple(f32[784,1024]{1,0} %call.1, f32[1024]{0} %fusion.4, f32[1024,1024]{1,0} %call, f32[1024]{0} %fusion.2, f32[1024,10]{1,0} %fusion.1, /*index=5*/f32[10]{0} %fusion)
+}
+
