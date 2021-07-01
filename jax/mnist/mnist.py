@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Modified by Mikhail Isaev at Nvidia
+# Modified by Mikhail Isaev at Nvidia in 2021
 
 """An MNIST example with single-program multiple-data (SPMD) data parallelism.
 
