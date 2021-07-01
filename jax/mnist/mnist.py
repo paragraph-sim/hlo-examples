@@ -49,7 +49,8 @@ import numpy as np
 
 _DATA = "/tmp/jax_example_data/"
 
-if "xla_force_host_platform_device_count" in os.environ['XLA_FLAGS']:
+if 'XLA_FLAGS' in os.environ and \
+        "xla_force_host_platform_device_count" in os.environ['XLA_FLAGS']:
   jax.config.update('jax_platform_name', 'cpu')
 
 from jax.lib import xla_bridge
