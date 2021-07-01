@@ -1,0 +1,233 @@
+HloModule pmap_simulate_until_output.597
+
+%fused_computation.clone (param_0.11: f32[520,1024], param_1.24: f32[520,1024]) -> f32[520,1024] {
+  %param_0.11 = f32[520,1024]{1,0} parameter(0)
+  %param_1.24 = f32[520,1024]{1,0} parameter(1)
+  %constant.2256 = f32[] constant(0.5), metadata={op_type="xla_call" op_name="pmap(simulate_until_output)/scan/while/body/xla_call[ backend=None\n                                                      device=None\n                                                      donated_invars=(False, False, False, False, False)\n                                                      inline=False\n                                                      name=multi_step ]" source_file="wave_equation.py" source_line=144}
+  %broadcast.700 = f32[520,1024]{1,0} broadcast(f32[] %constant.2256), dimensions={}, metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=129}
+  %multiply.67 = f32[520,1024]{1,0} multiply(f32[520,1024]{1,0} %param_1.24, f32[520,1024]{1,0} %broadcast.700), metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=130}
+  ROOT %add.297 = f32[520,1024]{1,0} add(f32[520,1024]{1,0} %param_0.11, f32[520,1024]{1,0} %multiply.67), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=130}
+}
+
+%parallel_fusion (p.8: f32[520,1024], p.9: f32[520,1024]) -> f32[520,1024] {
+  %p.8 = f32[520,1024]{1,0} parameter(0)
+  %p.9 = f32[520,1024]{1,0} parameter(1)
+  ROOT %fusion.clone = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %p.8, f32[520,1024]{1,0} %p.9), kind=kLoop, calls=%fused_computation.clone, outer_dimension_partitions={8}, metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=130}
+}
+
+%fused_computation.1.clone (param_0.12: f32[520,1024], param_1.25: f32[520,1024]) -> f32[520,1024] {
+  %param_0.12 = f32[520,1024]{1,0} parameter(0)
+  %param_1.25 = f32[520,1024]{1,0} parameter(1)
+  %slice.531 = f32[519,1024]{1,0} slice(f32[520,1024]{1,0} %param_1.25), slice={[1:520], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                                                                  indices_are_sorted=True\n                                                                                                  slice_sizes=(519, 1024)\n                                                                                                  unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %constant.2259 = f32[] constant(0), metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/jit(_pad)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(), collapsed_slice_dims=(0, 1), start_index_map=(0, 1))\n                                                                                                            indices_are_sorted=True\n                                                                                                            slice_sizes=(1, 1)\n                                                                                                            unique_indices=True ]" source_file="wave_equation.py" source_line=109}
+  %pad.221 = f32[520,1024]{1,0} pad(f32[519,1024]{1,0} %slice.531, f32[] %constant.2259), padding=0_1x0_0, metadata={op_type="pad" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/jit(_pad)/pad[ padding_config=((0, 1, 0), (0, 0, 0)) ]" source_file="wave_equation.py" source_line=109}
+  %slice.530 = f32[519,1024]{1,0} slice(f32[520,1024]{1,0} %param_1.25), slice={[0:519], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                                                                  indices_are_sorted=True\n                                                                                                  slice_sizes=(519, 1024)\n                                                                                                  unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %pad.220 = f32[520,1024]{1,0} pad(f32[519,1024]{1,0} %slice.530, f32[] %constant.2259), padding=1_0x0_0, metadata={op_type="pad" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/jit(_pad)/pad[ padding_config=((1, 0, 0), (0, 0, 0)) ]" source_file="wave_equation.py" source_line=109}
+  %add.298 = f32[520,1024]{1,0} add(f32[520,1024]{1,0} %pad.221, f32[520,1024]{1,0} %pad.220), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=116}
+  %slice.529 = f32[520,1023]{1,0} slice(f32[520,1024]{1,0} %param_1.25), slice={[0:520], [1:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(1,))\n                                                                                                  indices_are_sorted=True\n                                                                                                  slice_sizes=(520, 1023)\n                                                                                                  unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %pad.219 = f32[520,1024]{1,0} pad(f32[520,1023]{1,0} %slice.529, f32[] %constant.2259), padding=0_0x0_1, metadata={op_type="pad" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/jit(_pad)/pad[ padding_config=((0, 0, 0), (0, 1, 0)) ]" source_file="wave_equation.py" source_line=109}
+  %add.299 = f32[520,1024]{1,0} add(f32[520,1024]{1,0} %add.298, f32[520,1024]{1,0} %pad.219), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=116}
+  %slice.528 = f32[520,1023]{1,0} slice(f32[520,1024]{1,0} %param_1.25), slice={[0:520], [0:1023]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(1,))\n                                                                                                  indices_are_sorted=True\n                                                                                                  slice_sizes=(520, 1023)\n                                                                                                  unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %pad.218 = f32[520,1024]{1,0} pad(f32[520,1023]{1,0} %slice.528, f32[] %constant.2259), padding=0_0x1_0, metadata={op_type="pad" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/jit(_pad)/pad[ padding_config=((0, 0, 0), (1, 0, 0)) ]" source_file="wave_equation.py" source_line=109}
+  %add.300 = f32[520,1024]{1,0} add(f32[520,1024]{1,0} %add.299, f32[520,1024]{1,0} %pad.218), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=116}
+  %constant.2258 = f32[] constant(4), metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=116}
+  %broadcast.702 = f32[520,1024]{1,0} broadcast(f32[] %constant.2258), dimensions={}, metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=116}
+  %multiply.68 = f32[520,1024]{1,0} multiply(f32[520,1024]{1,0} %param_1.25, f32[520,1024]{1,0} %broadcast.702), metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=116}
+  %subtract.18 = f32[520,1024]{1,0} subtract(f32[520,1024]{1,0} %add.300, f32[520,1024]{1,0} %multiply.68), metadata={op_type="sub" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/sub" source_file="wave_equation.py" source_line=116}
+  %constant.2257 = f32[] constant(0.5), metadata={op_type="xla_call" op_name="pmap(simulate_until_output)/scan/while/body/xla_call[ backend=None\n                                                      device=None\n                                                      donated_invars=(False, False, False, False, False)\n                                                      inline=False\n                                                      name=multi_step ]" source_file="wave_equation.py" source_line=144}
+  %broadcast.701 = f32[520,1024]{1,0} broadcast(f32[] %constant.2257), dimensions={}, metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=129}
+  %multiply.69 = f32[520,1024]{1,0} multiply(f32[520,1024]{1,0} %subtract.18, f32[520,1024]{1,0} %broadcast.701), metadata={op_type="mul" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/mul" source_file="wave_equation.py" source_line=129}
+  ROOT %add.301 = f32[520,1024]{1,0} add(f32[520,1024]{1,0} %param_0.12, f32[520,1024]{1,0} %multiply.69), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=129}
+}
+
+%parallel_fusion.1 (p.10: f32[520,1024], p.11: f32[520,1024]) -> f32[520,1024] {
+  %p.10 = f32[520,1024]{1,0} parameter(0)
+  %p.11 = f32[520,1024]{1,0} parameter(1)
+  ROOT %fusion.1.clone = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %p.10, f32[520,1024]{1,0} %p.11), kind=kLoop, calls=%fused_computation.1.clone, outer_dimension_partitions={8}, metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/jit(leapfrog_step)/add" source_file="wave_equation.py" source_line=129}
+}
+
+%wide.body_computation__2.448.clone.clone.2.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone (wide_param.36: (s32[], f32[520,1024], f32[520,1024])) -> (s32[], f32[520,1024], f32[520,1024]) {
+  %wide_param.36 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) parameter(0)
+  %get-tuple-element.3414 = s32[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %wide_param.36), index=0
+  %constant.2240 = s32[] constant(1), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/add" source_file="wave_equation.py" source_line=137}
+  %add.290 = s32[] add(s32[] %get-tuple-element.3414, s32[] %constant.2240), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/body/add" source_file="wave_equation.py" source_line=137}
+  %get-tuple-element.3415 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %wide_param.36), index=1
+  %get-tuple-element.3416 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %wide_param.36), index=2
+  %call.35 = f32[520,1024]{1,0} call(f32[520,1024]{1,0} %get-tuple-element.3416, f32[520,1024]{1,0} %get-tuple-element.3415), to_apply=%parallel_fusion.1
+  %call.34 = f32[520,1024]{1,0} call(f32[520,1024]{1,0} %get-tuple-element.3415, f32[520,1024]{1,0} %call.35), to_apply=%parallel_fusion
+  ROOT %tuple.283 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) tuple(s32[] %add.290, f32[520,1024]{1,0} %call.34, f32[520,1024]{1,0} %call.35)
+}
+
+%wide.cond_computation__2.463.clone.clone.2.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone (wide_param.37: (s32[], f32[520,1024], f32[520,1024])) -> pred[] {
+  %wide_param.37 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) parameter(0)
+  %get-tuple-element.3405 = s32[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %wide_param.37), index=0
+  %constant.2241 = s32[] constant(4), metadata={op_type="xla_call" op_name="pmap(simulate_until_output)/scan/while/body/xla_call[ backend=None\n                                                      device=None\n                                                      donated_invars=(False, False, False, False, False)\n                                                      inline=False\n                                                      name=multi_step ]" source_file="wave_equation.py" source_line=144}
+  ROOT %compare.203 = pred[] compare(s32[] %get-tuple-element.3405, s32[] %constant.2241), direction=LT, metadata={op_type="lt" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while/cond/lt" source_file="wave_equation.py" source_line=137}
+}
+
+%fused_computation.2 (param_0.2: f32[520,1024], param_1.9: f32[4,1024], param_2.12: pred[]) -> f32[520,1024] {
+  %param_0.2 = f32[520,1024]{1,0} parameter(0)
+  %param_2.12 = pred[] parameter(2)
+  %broadcast.694 = pred[4,1024]{1,0} broadcast(pred[] %param_2.12), dimensions={}
+  %param_1.9 = f32[4,1024]{1,0} parameter(1)
+  %slice.524 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %param_0.2), slice={[516:520], [0:1024]}
+  %select.132 = f32[4,1024]{1,0} select(pred[4,1024]{1,0} %broadcast.694, f32[4,1024]{1,0} %param_1.9, f32[4,1024]{1,0} %slice.524)
+  %constant.2246 = s32[] constant(516)
+  %constant.2247 = s32[] constant(0)
+  ROOT %dynamic-update-slice.80 = f32[520,1024]{1,0} dynamic-update-slice(f32[520,1024]{1,0} %param_0.2, f32[4,1024]{1,0} %select.132, s32[] %constant.2246, s32[] %constant.2247), metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=69}
+}
+
+%fused_computation.3 (param_0.3: f32[520,1024], param_1.12: f32[4,1024], param_2.16: pred[]) -> f32[520,1024] {
+  %param_0.3 = f32[520,1024]{1,0} parameter(0)
+  %param_2.16 = pred[] parameter(2)
+  %broadcast.695 = pred[4,1024]{1,0} broadcast(pred[] %param_2.16), dimensions={}
+  %param_1.12 = f32[4,1024]{1,0} parameter(1)
+  %slice.525 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %param_0.3), slice={[0:4], [0:1024]}
+  %select.133 = f32[4,1024]{1,0} select(pred[4,1024]{1,0} %broadcast.695, f32[4,1024]{1,0} %param_1.12, f32[4,1024]{1,0} %slice.525)
+  %constant.2248 = s32[] constant(0)
+  ROOT %dynamic-update-slice.81 = f32[520,1024]{1,0} dynamic-update-slice(f32[520,1024]{1,0} %param_0.3, f32[4,1024]{1,0} %select.133, s32[] %constant.2248, s32[] %constant.2248), metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=67}
+}
+
+%fused_computation.4 (param_0.4: f32[520,1024], param_1.16: f32[4,1024], param_2.21: pred[]) -> f32[520,1024] {
+  %param_0.4 = f32[520,1024]{1,0} parameter(0)
+  %param_2.21 = pred[] parameter(2)
+  %broadcast.696 = pred[4,1024]{1,0} broadcast(pred[] %param_2.21), dimensions={}
+  %param_1.16 = f32[4,1024]{1,0} parameter(1)
+  %slice.526 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %param_0.4), slice={[516:520], [0:1024]}
+  %select.135 = f32[4,1024]{1,0} select(pred[4,1024]{1,0} %broadcast.696, f32[4,1024]{1,0} %param_1.16, f32[4,1024]{1,0} %slice.526)
+  %constant.2249 = s32[] constant(516)
+  %constant.2250 = s32[] constant(0)
+  ROOT %dynamic-update-slice.82 = f32[520,1024]{1,0} dynamic-update-slice(f32[520,1024]{1,0} %param_0.4, f32[4,1024]{1,0} %select.135, s32[] %constant.2249, s32[] %constant.2250), metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=69}
+}
+
+%fused_computation.5 (param_0.5: f32[520,1024], param_1.19: f32[4,1024], param_2.25: pred[]) -> f32[520,1024] {
+  %param_0.5 = f32[520,1024]{1,0} parameter(0)
+  %param_2.25 = pred[] parameter(2)
+  %broadcast.697 = pred[4,1024]{1,0} broadcast(pred[] %param_2.25), dimensions={}
+  %param_1.19 = f32[4,1024]{1,0} parameter(1)
+  %slice.527 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %param_0.5), slice={[0:4], [0:1024]}
+  %select.136 = f32[4,1024]{1,0} select(pred[4,1024]{1,0} %broadcast.697, f32[4,1024]{1,0} %param_1.19, f32[4,1024]{1,0} %slice.527)
+  %constant.2251 = s32[] constant(0)
+  ROOT %dynamic-update-slice.83 = f32[520,1024]{1,0} dynamic-update-slice(f32[520,1024]{1,0} %param_0.5, f32[4,1024]{1,0} %select.136, s32[] %constant.2251, s32[] %constant.2251), metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=67}
+}
+
+%wide.body_computation__1.511.clone.clone.clone.clone (wide_param.10: (s32[], f32[520,1024], f32[520,1024], pred[], pred[], /*index=5*/pred[], pred[])) -> (s32[], f32[520,1024], f32[520,1024], pred[], pred[], /*index=5*/pred[], pred[]) {
+  %wide_param.10 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) parameter(0)
+  %get-tuple-element.3427 = s32[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=0
+  %constant.1724 = s32[] constant(1), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/add" source_file="wave_equation.py" source_line=97}
+  %add.205 = s32[] add(s32[] %get-tuple-element.3427, s32[] %constant.1724), metadata={op_type="add" op_name="pmap(simulate_until_output)/scan/while/body/add" source_file="wave_equation.py" source_line=97}
+  %constant.1674 = s32[] constant(0)
+  %copy.23 = s32[] copy(s32[] %constant.1674)
+  %get-tuple-element.3428 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=1
+  %get-tuple-element.3429 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=2
+  %tuple.281 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) tuple(s32[] %copy.23, f32[520,1024]{1,0} %get-tuple-element.3428, f32[520,1024]{1,0} %get-tuple-element.3429)
+  %while.63 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) while((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %tuple.281), condition=%wide.cond_computation__2.463.clone.clone.2.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone, body=%wide.body_computation__2.448.clone.clone.2.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone.clone
+  %get-tuple-element.3407 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %while.63), index=1, metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while[ body_nconsts=2\n                                                                   cond_nconsts=0 ]" source_file="wave_equation.py" source_line=137}
+  %copy.9 = f32[520,1024]{1,0} copy(f32[520,1024]{1,0} %get-tuple-element.3407)
+  %slice.464 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %get-tuple-element.3407), slice={[512:516], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                    indices_are_sorted=True\n                                                    slice_sizes=(4, 1024)\n                                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.20 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.464), source_target_pairs={{0,1},{1,2},{2,3},{3,4},{4,5},{5,6},{6,7},{7,8},{8,9},{9,10},{10,11},{11,12},{12,13},{13,14},{14,15}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/scan/while/body/ppermute[ axis_name=x\n                                                      perm=((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15)) ]" source_file="wave_equation.py" source_line=31}
+  %get-tuple-element.3430 = pred[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=3
+  %fusion.5 = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %copy.9, f32[4,1024]{1,0} %collective-permute.20, pred[] %get-tuple-element.3430), kind=kLoop, calls=%fused_computation.5, metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=67}
+  %slice.466 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %get-tuple-element.3407), slice={[4:8], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                    indices_are_sorted=True\n                                                    slice_sizes=(4, 1024)\n                                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.21 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.466), source_target_pairs={{1,0},{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/scan/while/body/ppermute[ axis_name=x\n                                                      perm=((1, 0), (2, 1), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), (10, 9), (11, 10), (12, 11), (13, 12), (14, 13), (15, 14)) ]" source_file="wave_equation.py" source_line=35}
+  %get-tuple-element.3431 = pred[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=4
+  %fusion.4 = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %fusion.5, f32[4,1024]{1,0} %collective-permute.21, pred[] %get-tuple-element.3431), kind=kLoop, calls=%fused_computation.4, metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=69}
+  %copy.20 = f32[520,1024]{1,0} copy(f32[520,1024]{1,0} %fusion.4)
+  %get-tuple-element.3408 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}) %while.63), index=2, metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while/body/jit(multi_step)/while[ body_nconsts=2\n                                                                   cond_nconsts=0 ]" source_file="wave_equation.py" source_line=137}
+  %copy.11 = f32[520,1024]{1,0} copy(f32[520,1024]{1,0} %get-tuple-element.3408)
+  %slice.460 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %get-tuple-element.3408), slice={[512:516], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                    indices_are_sorted=True\n                                                    slice_sizes=(4, 1024)\n                                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.18 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.460), source_target_pairs={{0,1},{1,2},{2,3},{3,4},{4,5},{5,6},{6,7},{7,8},{8,9},{9,10},{10,11},{11,12},{12,13},{13,14},{14,15}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/scan/while/body/ppermute[ axis_name=x\n                                                      perm=((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15)) ]" source_file="wave_equation.py" source_line=31}
+  %get-tuple-element.3432 = pred[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=5
+  %fusion.3 = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %copy.11, f32[4,1024]{1,0} %collective-permute.18, pred[] %get-tuple-element.3432), kind=kLoop, calls=%fused_computation.3, metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=67}
+  %slice.462 = f32[4,1024]{1,0} slice(f32[520,1024]{1,0} %get-tuple-element.3408), slice={[4:8], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/scan/while/body/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                                    indices_are_sorted=True\n                                                    slice_sizes=(4, 1024)\n                                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.19 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.462), source_target_pairs={{1,0},{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/scan/while/body/ppermute[ axis_name=x\n                                                      perm=((1, 0), (2, 1), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), (10, 9), (11, 10), (12, 11), (13, 12), (14, 13), (15, 14)) ]" source_file="wave_equation.py" source_line=35}
+  %get-tuple-element.3433 = pred[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.10), index=6
+  %fusion.2 = f32[520,1024]{1,0} fusion(f32[520,1024]{1,0} %fusion.3, f32[4,1024]{1,0} %collective-permute.19, pred[] %get-tuple-element.3433), kind=kLoop, calls=%fused_computation.2, metadata={op_type="scatter" op_name="pmap(simulate_until_output)/scan/while/body/scatter[ dimension_numbers=ScatterDimensionNumbers(update_window_dims=(0, 1), inserted_window_dims=(), scatter_dims_to_operand_dims=(0,))\n                                                     indices_are_sorted=False\n                                                     unique_indices=True\n                                                     update_consts=(  ) ]" source_file="wave_equation.py" source_line=69}
+  %copy.21 = f32[520,1024]{1,0} copy(f32[520,1024]{1,0} %fusion.2)
+  ROOT %tuple.286 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) tuple(s32[] %add.205, f32[520,1024]{1,0} %copy.20, f32[520,1024]{1,0} %copy.21, pred[] %get-tuple-element.3430, pred[] %get-tuple-element.3431, /*index=5*/pred[] %get-tuple-element.3432, pred[] %get-tuple-element.3433)
+}
+
+%wide.cond_computation__1.565.clone.clone.clone (wide_param.11: (s32[], f32[520,1024], f32[520,1024], pred[], pred[], /*index=5*/pred[], pred[])) -> pred[] {
+  %wide_param.11 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) parameter(0)
+  %get-tuple-element.1676 = s32[] get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %wide_param.11), index=0
+  %constant.1725 = s32[] constant(8192), metadata={op_type="lt" op_name="pmap(simulate_until_output)/scan/while/cond/lt" source_file="wave_equation.py" source_line=97}
+  ROOT %compare.188 = pred[] compare(s32[] %get-tuple-element.1676, s32[] %constant.1725), direction=LT, metadata={op_type="lt" op_name="pmap(simulate_until_output)/scan/while/cond/lt" source_file="wave_equation.py" source_line=97}
+}
+
+%and.reduce_sub_computation.1 (lhs.1: pred[], rhs.1: pred[]) -> pred[] {
+  %lhs.1 = pred[] parameter(0)
+  %rhs.1 = pred[] parameter(1)
+  ROOT %and.2 = pred[] and(pred[] %lhs.1, pred[] %rhs.1)
+}
+
+%fused_computation.6 () -> pred[] {
+  %constant.2254 = s32[] constant(0), metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while[ body_nconsts=0\n                                        cond_nconsts=0 ]" source_file="wave_equation.py" source_line=97}
+  %broadcast.698 = s32[2]{0} broadcast(s32[] %constant.2254), dimensions={}
+  %constant.2252 = s32[2]{0} constant({516, 0})
+  %compare.204 = pred[2]{0} compare(s32[2]{0} %broadcast.698, s32[2]{0} %constant.2252), direction=LE
+  %constant.2253 = pred[] constant(true)
+  ROOT %reduce.24 = pred[] reduce(pred[2]{0} %compare.204, pred[] %constant.2253), dimensions={0}, to_apply=%and.reduce_sub_computation.1
+}
+
+%and.reduce_sub_computation (lhs: pred[], rhs: pred[]) -> pred[] {
+  %lhs = pred[] parameter(0)
+  %rhs = pred[] parameter(1)
+  ROOT %and = pred[] and(pred[] %lhs, pred[] %rhs)
+}
+
+%fused_computation.7 () -> pred[] {
+  %constant.2255 = pred[] constant(true)
+  %broadcast.699 = pred[2]{0} broadcast(pred[] %constant.2255), dimensions={}
+  ROOT %reduce.25 = pred[] reduce(pred[2]{0} %broadcast.699, pred[] %constant.2255), dimensions={0}, to_apply=%and.reduce_sub_computation
+}
+
+%parallel_concatenate.14 (p: f32[4,1024], p.1: f32[512,1024], p.2: f32[4,1024]) -> f32[520,1024] {
+  %p = f32[4,1024]{1,0} parameter(0)
+  %p.1 = f32[512,1024]{1,0} parameter(1)
+  %p.2 = f32[4,1024]{1,0} parameter(2)
+  ROOT %concatenate.14.clone = f32[520,1024]{1,0} concatenate(f32[4,1024]{1,0} %p, f32[512,1024]{1,0} %p.1, f32[4,1024]{1,0} %p.2), dimensions={0}, outer_dimension_partitions={8}, metadata={op_type="concatenate" op_name="pmap(simulate_until_output)/concatenate[ dimension=0 ]" source_file="wave_equation.py" source_line=60}
+}
+
+%parallel_concatenate.25 (p.3: f32[4,1024], p.4: f32[512,1024], p.5: f32[4,1024]) -> f32[520,1024] {
+  %p.3 = f32[4,1024]{1,0} parameter(0)
+  %p.4 = f32[512,1024]{1,0} parameter(1)
+  %p.5 = f32[4,1024]{1,0} parameter(2)
+  ROOT %concatenate.25.clone = f32[520,1024]{1,0} concatenate(f32[4,1024]{1,0} %p.3, f32[512,1024]{1,0} %p.4, f32[4,1024]{1,0} %p.5), dimensions={0}, outer_dimension_partitions={8}, metadata={op_type="concatenate" op_name="pmap(simulate_until_output)/concatenate[ dimension=0 ]" source_file="wave_equation.py" source_line=60}
+}
+
+%parallel_slice.454 (p.6: f32[520,1024]) -> f32[512,1024] {
+  %p.6 = f32[520,1024]{1,0} parameter(0)
+  ROOT %slice.454.clone = f32[512,1024]{1,0} slice(f32[520,1024]{1,0} %p.6), slice={[4:516], [0:1024]}, outer_dimension_partitions={8}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(512, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=155}
+}
+
+%parallel_slice.455 (p.7: f32[520,1024]) -> f32[512,1024] {
+  %p.7 = f32[520,1024]{1,0} parameter(0)
+  ROOT %slice.455.clone = f32[512,1024]{1,0} slice(f32[520,1024]{1,0} %p.7), slice={[4:516], [0:1024]}, outer_dimension_partitions={8}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(512, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=155}
+}
+
+ENTRY %pmap_simulate_until_output.597 (parameter.1: f32[512,1024], parameter.2: f32[512,1024]) -> (f32[512,1024], f32[512,1024]) {
+  %constant.28 = s32[] constant(0), metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while[ body_nconsts=0\n                                        cond_nconsts=0 ]" source_file="wave_equation.py" source_line=97}
+  %copy.22 = s32[] copy(s32[] %constant.28)
+  %parameter.1 = f32[512,1024]{1,0} parameter(0), parameter_replication={false}
+  %slice.450 = f32[4,1024]{1,0} slice(f32[512,1024]{1,0} %parameter.1), slice={[508:512], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(4, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.13 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.450), source_target_pairs={{0,1},{1,2},{2,3},{3,4},{4,5},{5,6},{6,7},{7,8},{8,9},{9,10},{10,11},{11,12},{12,13},{13,14},{14,15}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/ppermute[ axis_name=x\n                                      perm=((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15)) ]" source_file="wave_equation.py" source_line=31}
+  %slice.451 = f32[4,1024]{1,0} slice(f32[512,1024]{1,0} %parameter.1), slice={[0:4], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(4, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.12 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.451), source_target_pairs={{1,0},{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/ppermute[ axis_name=x\n                                      perm=((1, 0), (2, 1), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), (10, 9), (11, 10), (12, 11), (13, 12), (14, 13), (15, 14)) ]" source_file="wave_equation.py" source_line=35}
+  %call.30 = f32[520,1024]{1,0} call(f32[4,1024]{1,0} %collective-permute.13, f32[512,1024]{1,0} %parameter.1, f32[4,1024]{1,0} %collective-permute.12), to_apply=%parallel_concatenate.14
+  %parameter.2 = f32[512,1024]{1,0} parameter(1), parameter_replication={false}
+  %slice.452 = f32[4,1024]{1,0} slice(f32[512,1024]{1,0} %parameter.2), slice={[508:512], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(4, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.24 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.452), source_target_pairs={{0,1},{1,2},{2,3},{3,4},{4,5},{5,6},{6,7},{7,8},{8,9},{9,10},{10,11},{11,12},{12,13},{13,14},{14,15}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/ppermute[ axis_name=x\n                                      perm=((0, 1), (1, 2), (2, 3), (3, 4), (4, 5), (5, 6), (6, 7), (7, 8), (8, 9), (9, 10), (10, 11), (11, 12), (12, 13), (13, 14), (14, 15)) ]" source_file="wave_equation.py" source_line=31}
+  %slice.453 = f32[4,1024]{1,0} slice(f32[512,1024]{1,0} %parameter.2), slice={[0:4], [0:1024]}, metadata={op_type="gather" op_name="pmap(simulate_until_output)/gather[ dimension_numbers=GatherDimensionNumbers(offset_dims=(0, 1), collapsed_slice_dims=(), start_index_map=(0,))\n                                    indices_are_sorted=True\n                                    slice_sizes=(4, 1024)\n                                    unique_indices=True ]" source_file="wave_equation.py" source_line=43}
+  %collective-permute.23 = f32[4,1024]{1,0} collective-permute(f32[4,1024]{1,0} %slice.453), source_target_pairs={{1,0},{2,1},{3,2},{4,3},{5,4},{6,5},{7,6},{8,7},{9,8},{10,9},{11,10},{12,11},{13,12},{14,13},{15,14}}, metadata={op_type="ppermute" op_name="pmap(simulate_until_output)/ppermute[ axis_name=x\n                                      perm=((1, 0), (2, 1), (3, 2), (4, 3), (5, 4), (6, 5), (7, 6), (8, 7), (9, 8), (10, 9), (11, 10), (12, 11), (13, 12), (14, 13), (15, 14)) ]" source_file="wave_equation.py" source_line=35}
+  %call.31 = f32[520,1024]{1,0} call(f32[4,1024]{1,0} %collective-permute.24, f32[512,1024]{1,0} %parameter.2, f32[4,1024]{1,0} %collective-permute.23), to_apply=%parallel_concatenate.25
+  %fusion.7 = pred[] fusion(), kind=kLoop, calls=%fused_computation.7
+  %fusion.6 = pred[] fusion(), kind=kLoop, calls=%fused_computation.6
+  %tuple.284 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) tuple(s32[] %copy.22, f32[520,1024]{1,0} %call.30, f32[520,1024]{1,0} %call.31, pred[] %fusion.7, pred[] %fusion.6, /*index=5*/pred[] %fusion.7, pred[] %fusion.6)
+  %while.50 = (s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) while((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %tuple.284), condition=%wide.cond_computation__1.565.clone.clone.clone, body=%wide.body_computation__1.511.clone.clone.clone.clone
+  %get-tuple-element.1679 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %while.50), index=1, metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while[ body_nconsts=0\n                                        cond_nconsts=0 ]" source_file="wave_equation.py" source_line=97}
+  %call.32 = f32[512,1024]{1,0} call(f32[520,1024]{1,0} %get-tuple-element.1679), to_apply=%parallel_slice.454
+  %get-tuple-element.1680 = f32[520,1024]{1,0} get-tuple-element((s32[], f32[520,1024]{1,0}, f32[520,1024]{1,0}, pred[], pred[], /*index=5*/pred[], pred[]) %while.50), index=2, metadata={op_type="while" op_name="pmap(simulate_until_output)/scan/while[ body_nconsts=0\n                                        cond_nconsts=0 ]" source_file="wave_equation.py" source_line=97}
+  %call.33 = f32[512,1024]{1,0} call(f32[520,1024]{1,0} %get-tuple-element.1680), to_apply=%parallel_slice.455
+  ROOT %tuple.596 = (f32[512,1024]{1,0}, f32[512,1024]{1,0}) tuple(f32[512,1024]{1,0} %call.32, f32[512,1024]{1,0} %call.33)
+}
+
