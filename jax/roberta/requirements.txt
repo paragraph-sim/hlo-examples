@@ -1,0 +1,4 @@
+datasets
+git+https://github.com/huggingface/transformers.git
+flax
+git+https://github.com/deepmind/optax.git
