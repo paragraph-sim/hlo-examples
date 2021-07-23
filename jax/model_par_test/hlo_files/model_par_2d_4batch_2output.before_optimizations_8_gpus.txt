@@ -1,0 +1,303 @@
+HloModule xmap__unnamed_wrapped_function_.257
+
+%primitive_computation_add.24 (parameter.25: f32[], parameter.26: f32[]) -> f32[] {
+  %parameter.25 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.26 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.27 = f32[] add(f32[] %parameter.25, f32[] %parameter.26), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.42 (parameter.43: f32[], parameter.44: f32[]) -> f32[] {
+  %parameter.43 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.44 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.45 = f32[] add(f32[] %parameter.43, f32[] %parameter.44), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_max__1.50 (parameter.51: f32[], parameter.52: f32[]) -> f32[] {
+  %parameter.51 = f32[] parameter(0), metadata={op_type="max" op_name="max"}
+  %parameter.52 = f32[] parameter(1), metadata={op_type="max" op_name="max"}
+  ROOT %maximum.53 = f32[] maximum(f32[] %parameter.51, f32[] %parameter.52), metadata={op_type="max" op_name="max"}
+}
+
+%primitive_computation_add.58 (parameter.59: f32[], parameter.60: f32[]) -> f32[] {
+  %parameter.59 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.60 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.61 = f32[] add(f32[] %parameter.59, f32[] %parameter.60), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.67 (parameter.68: f32[], parameter.69: f32[]) -> f32[] {
+  %parameter.68 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.69 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.70 = f32[] add(f32[] %parameter.68, f32[] %parameter.69), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.72 (parameter.73: f32[], parameter.74: f32[]) -> f32[] {
+  %parameter.73 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.74 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.75 = f32[] add(f32[] %parameter.73, f32[] %parameter.74), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.110 (parameter.111: f32[], parameter.112: f32[]) -> f32[] {
+  %parameter.111 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.112 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.113 = f32[] add(f32[] %parameter.111, f32[] %parameter.112), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.115 (parameter.116: f32[], parameter.117: f32[]) -> f32[] {
+  %parameter.116 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.117 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.118 = f32[] add(f32[] %parameter.116, f32[] %parameter.117), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.123 (parameter.124: f32[], parameter.125: f32[]) -> f32[] {
+  %parameter.124 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.125 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.126 = f32[] add(f32[] %parameter.124, f32[] %parameter.125), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.128 (parameter.129: f32[], parameter.130: f32[]) -> f32[] {
+  %parameter.129 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.130 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.131 = f32[] add(f32[] %parameter.129, f32[] %parameter.130), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.144 (parameter.145: f32[], parameter.146: f32[]) -> f32[] {
+  %parameter.145 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.146 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.147 = f32[] add(f32[] %parameter.145, f32[] %parameter.146), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.153 (parameter.154: f32[], parameter.155: f32[]) -> f32[] {
+  %parameter.154 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.155 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.156 = f32[] add(f32[] %parameter.154, f32[] %parameter.155), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.164 (parameter.165: f32[], parameter.166: f32[]) -> f32[] {
+  %parameter.165 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.166 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.167 = f32[] add(f32[] %parameter.165, f32[] %parameter.166), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.169 (parameter.170: f32[], parameter.171: f32[]) -> f32[] {
+  %parameter.170 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.171 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.172 = f32[] add(f32[] %parameter.170, f32[] %parameter.171), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.180 (parameter.181: f32[], parameter.182: f32[]) -> f32[] {
+  %parameter.181 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.182 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.183 = f32[] add(f32[] %parameter.181, f32[] %parameter.182), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.201 (parameter.202: f32[], parameter.203: f32[]) -> f32[] {
+  %parameter.202 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.203 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.204 = f32[] add(f32[] %parameter.202, f32[] %parameter.203), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.206 (parameter.207: f32[], parameter.208: f32[]) -> f32[] {
+  %parameter.207 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.208 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.209 = f32[] add(f32[] %parameter.207, f32[] %parameter.208), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.216 (parameter.217: f32[], parameter.218: f32[]) -> f32[] {
+  %parameter.217 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.218 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.219 = f32[] add(f32[] %parameter.217, f32[] %parameter.218), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.221 (parameter.222: f32[], parameter.223: f32[]) -> f32[] {
+  %parameter.222 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.223 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.224 = f32[] add(f32[] %parameter.222, f32[] %parameter.223), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.236 (parameter.237: f32[], parameter.238: f32[]) -> f32[] {
+  %parameter.237 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.238 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.239 = f32[] add(f32[] %parameter.237, f32[] %parameter.238), metadata={op_type="add" op_name="add"}
+}
+
+%primitive_computation_add.241 (parameter.242: f32[], parameter.243: f32[]) -> f32[] {
+  %parameter.242 = f32[] parameter(0), metadata={op_type="add" op_name="add"}
+  %parameter.243 = f32[] parameter(1), metadata={op_type="add" op_name="add"}
+  ROOT %add.244 = f32[] add(f32[] %parameter.242, f32[] %parameter.243), metadata={op_type="add" op_name="add"}
+}
+
+ENTRY %xmap__unnamed_wrapped_function_.257 (parameter.1: f32[5120,1024], parameter.2: f32[1024,64], parameter.3: f32[128,5120], parameter.4: s32[128]) -> (f32[5120,1024], f32[1024,64]) {
+  %constant.5 = pred[] constant(false)
+  %constant.32 = pred[] constant(false), metadata={op_type="custom_jvp_call_jaxpr" op_name="xmap(named_loss)/custom_jvp_call_jaxpr[ jvp_jaxpr_thunk=<function _memoize.<locals>.memoized at 0x7fbc001da4c0>\n                                        num_consts=0 ]" source_file="model_par.py" source_line=38}
+  %parameter.4 = s32[128]{0} parameter(3), parameter_replication={false}
+  %reshape.13 = s32[128,1]{1,0} reshape(s32[128]{0} %parameter.4), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(128, 1) ]" source_file="model_par.py" source_line=79}
+  %reshape.22 = s32[128]{0} reshape(s32[128,1]{1,0} %reshape.13), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(1,) ]" source_file="model_par.py" source_line=79}
+  %broadcast.102 = s32[64,128]{1,0} broadcast(s32[128]{0} %reshape.22), dimensions={1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(1,)\n                                   shape=(64, 128) ]" source_file="model_par.py" source_line=48}
+  %iota.85 = s32[64] iota(), iota_dimension=0, metadata={op_type="iota" op_name="xmap(named_loss)/iota[ dimension=0\n                       dtype=int32\n                       shape=(64,) ]" source_file="model_par.py" source_line=48}
+  %constant.86 = s32[] constant(1), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=48}
+  %broadcast.87 = s32[64]{0} broadcast(s32[] %constant.86), dimensions={}, metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=48}
+  %multiply.88 = s32[64]{0} multiply(s32[64] %iota.85, s32[64]{0} %broadcast.87), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=48}
+  %constant.89 = s32[] constant(0), metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=48}
+  %broadcast.90 = s32[64]{0} broadcast(s32[] %constant.89), dimensions={}, metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=48}
+  %add.91 = s32[64]{0} add(s32[64]{0} %multiply.88, s32[64]{0} %broadcast.90), metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=48}
+  %replica-id.94 = u32[] replica-id(), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %constant.92 = u32[] constant(1), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %divide.95 = u32[] divide(u32[] %replica-id.94, u32[] %constant.92), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %constant.93 = u32[] constant(2), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %remainder.96 = u32[] remainder(u32[] %divide.95, u32[] %constant.93), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %convert.97 = s32[] convert(u32[] %remainder.96), metadata={op_type="axis_index" op_name="xmap(named_loss)/axis_index[ axis_name=z ]" source_file="model_par.py" source_line=48}
+  %constant.98 = s32[] constant(64), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=48}
+  %multiply.99 = s32[] multiply(s32[] %convert.97, s32[] %constant.98), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=48}
+  %broadcast.100 = s32[64]{0} broadcast(s32[] %multiply.99), dimensions={}, metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=48}
+  %add.101 = s32[64]{0} add(s32[64]{0} %add.91, s32[64]{0} %broadcast.100), metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=48}
+  %reshape.103 = s32[64,1]{1,0} reshape(s32[64]{0} %add.101), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(64, 1) ]" source_file="model_par.py" source_line=48}
+  %reshape.104 = s32[64]{0} reshape(s32[64,1]{1,0} %reshape.103), metadata={op_type="eq" op_name="xmap(named_loss)/eq" source_file="model_par.py" source_line=48}
+  %broadcast.105 = s32[64,128]{1,0} broadcast(s32[64]{0} %reshape.104), dimensions={0}, metadata={op_type="eq" op_name="xmap(named_loss)/eq" source_file="model_par.py" source_line=48}
+  %compare.106 = pred[64,128]{1,0} compare(s32[64,128]{1,0} %broadcast.102, s32[64,128]{1,0} %broadcast.105), direction=EQ, metadata={op_type="eq" op_name="xmap(named_loss)/eq" source_file="model_par.py" source_line=48}
+  %convert.107 = f32[64,128]{1,0} convert(pred[64,128]{1,0} %compare.106), metadata={op_type="convert_element_type" op_name="xmap(named_loss)/convert_element_type[ new_dtype=float32\n                                       weak_type=False ]" source_file="model_par.py" source_line=48}
+  %parameter.3 = f32[128,5120]{1,0} parameter(2), parameter_replication={false}
+  %reshape.7 = f32[128,5120,1]{2,1,0} reshape(f32[128,5120]{1,0} %parameter.3), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(128, 5120, 1) ]" source_file="model_par.py" source_line=79}
+  %transpose.11 = f32[5120,128,1]{2,0,1} transpose(f32[128,5120,1]{2,1,0} %reshape.7), dimensions={1,0,2}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0, 2) ]" source_file="model_par.py" source_line=79}
+  %reshape.12 = f32[5120,128,1,1]{3,2,1,0} reshape(f32[5120,128,1]{2,0,1} %transpose.11), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(5120, 128, 1, 1) ]" source_file="model_par.py" source_line=79}
+  %reshape.20 = f32[5120,128,1]{2,1,0} reshape(f32[5120,128,1,1]{3,2,1,0} %reshape.12), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(3,) ]" source_file="model_par.py" source_line=79}
+  %reshape.21 = f32[5120,128]{1,0} reshape(f32[5120,128,1]{2,1,0} %reshape.20), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(2,) ]" source_file="model_par.py" source_line=79}
+  %parameter.1 = f32[5120,1024]{1,0} parameter(0), parameter_replication={false}
+  %reshape.6 = f32[5120,1,1024]{2,1,0} reshape(f32[5120,1024]{1,0} %parameter.1), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(5120, 1, 1024) ]" source_file="model_par.py" source_line=79}
+  %reshape.8 = f32[5120,1,1024,1]{3,2,1,0} reshape(f32[5120,1,1024]{2,1,0} %reshape.6), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(5120, 1, 1024, 1) ]" source_file="model_par.py" source_line=79}
+  %transpose.14 = f32[5120,1024,1,1]{3,1,2,0} transpose(f32[5120,1,1024,1]{3,2,1,0} %reshape.8), dimensions={0,2,1,3}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(0, 2, 1, 3) ]" source_file="model_par.py" source_line=79}
+  %reshape.15 = f32[5120,1024,1]{2,1,0} reshape(f32[5120,1024,1,1]{3,1,2,0} %transpose.14), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(3,) ]" source_file="model_par.py" source_line=79}
+  %reshape.16 = f32[5120,1024]{1,0} reshape(f32[5120,1024,1]{2,1,0} %reshape.15), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(2,) ]" source_file="model_par.py" source_line=79}
+  %dot.23 = f32[128,1024]{1,0} dot(f32[5120,128]{1,0} %reshape.21, f32[5120,1024]{1,0} %reshape.16), lhs_contracting_dims={0}, rhs_contracting_dims={0}, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'z\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=38}
+  %all-reduce.28 = f32[128,1024]{1,0} all-reduce(f32[128,1024]{1,0} %dot.23), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.24, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'z\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=38}
+  %tuple.29 = (f32[128,1024]{1,0}) tuple(f32[128,1024]{1,0} %all-reduce.28), metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'z\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=38}
+  %get-tuple-element.30 = f32[128,1024]{1,0} get-tuple-element((f32[128,1024]{1,0}) %tuple.29), index=0, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'z\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=38}
+  %transpose.31 = f32[1024,128]{0,1} transpose(f32[128,1024]{1,0} %get-tuple-element.30), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=38}
+  %constant.33 = f32[] constant(0), metadata={op_type="max" op_name="xmap(named_loss)/custom_jvp_call_jaxpr/max" source_file="model_par.py" source_line=38}
+  %broadcast.34 = f32[1024,128]{1,0} broadcast(f32[] %constant.33), dimensions={}, metadata={op_type="max" op_name="xmap(named_loss)/custom_jvp_call_jaxpr/max" source_file="model_par.py" source_line=38}
+  %maximum.35 = f32[1024,128]{1,0} maximum(f32[1024,128]{0,1} %transpose.31, f32[1024,128]{1,0} %broadcast.34), metadata={op_type="max" op_name="xmap(named_loss)/custom_jvp_call_jaxpr/max" source_file="model_par.py" source_line=38}
+  %tuple.36 = (f32[1024,128]{1,0}) tuple(f32[1024,128]{1,0} %maximum.35)
+  %get-tuple-element.37 = f32[1024,128]{1,0} get-tuple-element((f32[1024,128]{1,0}) %tuple.36), index=0
+  %parameter.2 = f32[1024,64]{1,0} parameter(1), parameter_replication={false}
+  %reshape.9 = f32[1024,1,64]{2,1,0} reshape(f32[1024,64]{1,0} %parameter.2), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(1024, 1, 64) ]" source_file="model_par.py" source_line=79}
+  %reshape.10 = f32[1024,1,64,1]{3,2,1,0} reshape(f32[1024,1,64]{2,1,0} %reshape.9), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(1024, 1, 64, 1) ]" source_file="model_par.py" source_line=79}
+  %transpose.17 = f32[1024,64,1,1]{3,1,2,0} transpose(f32[1024,1,64,1]{3,2,1,0} %reshape.10), dimensions={0,2,1,3}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(0, 2, 1, 3) ]" source_file="model_par.py" source_line=79}
+  %reshape.18 = f32[1024,64,1]{2,1,0} reshape(f32[1024,64,1,1]{3,1,2,0} %transpose.17), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(3,) ]" source_file="model_par.py" source_line=79}
+  %reshape.19 = f32[1024,64]{1,0} reshape(f32[1024,64,1]{2,1,0} %reshape.18), metadata={op_type="squeeze" op_name="xmap(named_loss)/squeeze[ dimensions=(2,) ]" source_file="model_par.py" source_line=79}
+  %dot.41 = f32[128,64]{1,0} dot(f32[1024,128]{1,0} %get-tuple-element.37, f32[1024,64]{1,0} %reshape.19), lhs_contracting_dims={0}, rhs_contracting_dims={0}, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'y\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=39}
+  %all-reduce.46 = f32[128,64]{1,0} all-reduce(f32[128,64]{1,0} %dot.41), replica_groups={{0},{1},{2},{3},{4},{5},{6},{7}}, to_apply=%primitive_computation_add.42, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'y\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=39}
+  %tuple.47 = (f32[128,64]{1,0}) tuple(f32[128,64]{1,0} %all-reduce.46), metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'y\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=39}
+  %get-tuple-element.48 = f32[128,64]{1,0} get-tuple-element((f32[128,64]{1,0}) %tuple.47), index=0, metadata={op_type="pdot" op_name="xmap(named_loss)/pdot[ axis_name=(\'y\',)\n                       pos_batch=[[], []]\n                       pos_contract=[[0], [0]] ]" source_file="model_par.py" source_line=39}
+  %transpose.83 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %get-tuple-element.48), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=43}
+  %constant.49 = f32[] constant(-inf), metadata={op_type="reduce_max" op_name="xmap(named_loss)/reduce_max[ axes=(  ) ]" source_file="model_par.py" source_line=41}
+  %reduce.54 = f32[128,64]{1,0} reduce(f32[128,64]{1,0} %get-tuple-element.48, f32[] %constant.49), dimensions={}, to_apply=%primitive_computation_max__1.50, metadata={op_type="reduce_max" op_name="xmap(named_loss)/reduce_max[ axes=(  ) ]" source_file="model_par.py" source_line=41}
+  %transpose.80 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %reduce.54), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=42}
+  %subtract.63 = f32[128,64]{1,0} subtract(f32[128,64]{1,0} %get-tuple-element.48, f32[128,64]{1,0} %reduce.54), metadata={op_type="sub" op_name="xmap(named_loss)/sub" source_file="model_par.py" source_line=42}
+  %exponential.64 = f32[128,64]{1,0} exponential(f32[128,64]{1,0} %subtract.63), metadata={op_type="exp" op_name="xmap(named_loss)/exp" source_file="model_par.py" source_line=42}
+  %transpose.65 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %exponential.64), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=42}
+  %constant.66 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %reduce.71 = f32[128]{0} reduce(f32[64,128]{0,1} %transpose.65, f32[] %constant.66), dimensions={0}, to_apply=%primitive_computation_add.67, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %all-reduce.76 = f32[128]{0} all-reduce(f32[128]{0} %reduce.71), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.72, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %tuple.77 = (f32[128]{0}) tuple(f32[128]{0} %all-reduce.76), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %get-tuple-element.78 = f32[128]{0} get-tuple-element((f32[128]{0}) %tuple.77), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %log.79 = f32[128]{0} log(f32[128]{0} %get-tuple-element.78), metadata={op_type="log" op_name="xmap(named_loss)/log" source_file="model_par.py" source_line=42}
+  %broadcast.81 = f32[64,128]{1,0} broadcast(f32[128]{0} %log.79), dimensions={1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(1,)\n                                   shape=(64, 128) ]" source_file="model_par.py" source_line=42}
+  %add.82 = f32[64,128]{0,1} add(f32[64,128]{0,1} %transpose.80, f32[64,128]{1,0} %broadcast.81), metadata={op_type="add" op_name="xmap(named_loss)/add" source_file="model_par.py" source_line=42}
+  %subtract.84 = f32[64,128]{0,1} subtract(f32[64,128]{0,1} %transpose.83, f32[64,128]{0,1} %add.82), metadata={op_type="sub" op_name="xmap(named_loss)/sub" source_file="model_par.py" source_line=43}
+  %multiply.108 = f32[64,128]{1,0} multiply(f32[64,128]{1,0} %convert.107, f32[64,128]{0,1} %subtract.84), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=49}
+  %constant.109 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %reduce.114 = f32[128]{0} reduce(f32[64,128]{1,0} %multiply.108, f32[] %constant.109), dimensions={0}, to_apply=%primitive_computation_add.110, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %all-reduce.119 = f32[128]{0} all-reduce(f32[128]{0} %reduce.114), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.115, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %tuple.120 = (f32[128]{0}) tuple(f32[128]{0} %all-reduce.119), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %get-tuple-element.121 = f32[128]{0} get-tuple-element((f32[128]{0}) %tuple.120), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %constant.122 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %reduce.127 = f32[] reduce(f32[128]{0} %get-tuple-element.121, f32[] %constant.122), dimensions={0}, to_apply=%primitive_computation_add.123, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %all-reduce.132 = f32[] all-reduce(f32[] %reduce.127), replica_groups={{0,2,4,6},{1,3,5,7}}, to_apply=%primitive_computation_add.128, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %tuple.133 = (f32[]) tuple(f32[] %all-reduce.132), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %get-tuple-element.134 = f32[] get-tuple-element((f32[]) %tuple.133), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %constant.135 = f32[] constant(512), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=50}
+  %divide.136 = f32[] divide(f32[] %get-tuple-element.134, f32[] %constant.135), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=50}
+  %negate.137 = f32[] negate(f32[] %divide.136), metadata={op_type="neg" op_name="xmap(named_loss)/neg" source_file="model_par.py" source_line=50}
+  %constant.38 = f32[] constant(0), metadata={op_type="gt" op_name="xmap(named_loss)/gt" source_file="model_par.py" source_line=38}
+  %broadcast.39 = f32[128,1024]{1,0} broadcast(f32[] %constant.38), dimensions={}, metadata={op_type="gt" op_name="xmap(named_loss)/gt" source_file="model_par.py" source_line=38}
+  %compare.40 = pred[128,1024]{1,0} compare(f32[128,1024]{1,0} %get-tuple-element.30, f32[128,1024]{1,0} %broadcast.39), direction=GT, metadata={op_type="gt" op_name="xmap(named_loss)/gt" source_file="model_par.py" source_line=38}
+  %transpose.230 = pred[1024,128]{0,1} transpose(pred[128,1024]{1,0} %compare.40), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=38}
+  %constant.138 = f32[] constant(1), metadata={op_type="neg" op_name="xmap(named_loss)/neg" source_file="model_par.py" source_line=50}
+  %negate.139 = f32[] negate(f32[] %constant.138), metadata={op_type="neg" op_name="xmap(named_loss)/neg" source_file="model_par.py" source_line=50}
+  %constant.140 = f32[] constant(512), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=50}
+  %divide.141 = f32[] divide(f32[] %negate.139, f32[] %constant.140), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=50}
+  %constant.142 = f32[] constant(128), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=50}
+  %multiply.143 = f32[] multiply(f32[] %divide.141, f32[] %constant.142), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=50}
+  %all-reduce.148 = f32[] all-reduce(f32[] %multiply.143), replica_groups={{0,2,4,6},{1,3,5,7}}, to_apply=%primitive_computation_add.144, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %tuple.149 = (f32[]) tuple(f32[] %all-reduce.148), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %get-tuple-element.150 = f32[] get-tuple-element((f32[]) %tuple.149), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=50}
+  %constant.151 = f32[] constant(64), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=49}
+  %multiply.152 = f32[] multiply(f32[] %get-tuple-element.150, f32[] %constant.151), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=49}
+  %all-reduce.157 = f32[] all-reduce(f32[] %multiply.152), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.153, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %tuple.158 = (f32[]) tuple(f32[] %all-reduce.157), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %get-tuple-element.159 = f32[] get-tuple-element((f32[]) %tuple.158), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=49}
+  %broadcast.160 = f32[64,128]{1,0} broadcast(f32[] %get-tuple-element.159), dimensions={}, metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=49}
+  %multiply.161 = f32[64,128]{1,0} multiply(f32[64,128]{1,0} %convert.107, f32[64,128]{1,0} %broadcast.160), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=49}
+  %negate.162 = f32[64,128]{1,0} negate(f32[64,128]{1,0} %multiply.161), metadata={op_type="neg" op_name="xmap(named_loss)/neg" source_file="model_par.py" source_line=43}
+  %constant.163 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %reduce.168 = f32[128]{0} reduce(f32[64,128]{1,0} %negate.162, f32[] %constant.163), dimensions={0}, to_apply=%primitive_computation_add.164, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %all-reduce.173 = f32[128]{0} all-reduce(f32[128]{0} %reduce.168), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.169, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %tuple.174 = (f32[128]{0}) tuple(f32[128]{0} %all-reduce.173), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %get-tuple-element.175 = f32[128]{0} get-tuple-element((f32[128]{0}) %tuple.174), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 0)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %divide.176 = f32[128]{0} divide(f32[128]{0} %get-tuple-element.175, f32[128]{0} %get-tuple-element.78), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=42}
+  %constant.177 = f32[] constant(64), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=42}
+  %broadcast.178 = f32[128]{0} broadcast(f32[] %constant.177), dimensions={}, metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=42}
+  %multiply.179 = f32[128]{0} multiply(f32[128]{0} %divide.176, f32[128]{0} %broadcast.178), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=42}
+  %all-reduce.184 = f32[128]{0} all-reduce(f32[128]{0} %multiply.179), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.180, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %tuple.185 = (f32[128]{0}) tuple(f32[128]{0} %all-reduce.184), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %get-tuple-element.186 = f32[128]{0} get-tuple-element((f32[128]{0}) %tuple.185), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\',)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=42}
+  %broadcast.187 = f32[64,128]{1,0} broadcast(f32[128]{0} %get-tuple-element.186), dimensions={1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(1,)\n                                   shape=(64, 128) ]" source_file="model_par.py" source_line=42}
+  %transpose.188 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %exponential.64), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=42}
+  %multiply.189 = f32[64,128]{1,0} multiply(f32[64,128]{1,0} %broadcast.187, f32[64,128]{0,1} %transpose.188), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=42}
+  %add.191 = f32[64,128]{1,0} add(f32[64,128]{1,0} %multiply.161, f32[64,128]{1,0} %multiply.189), metadata={op_type="add_any" op_name="xmap(named_loss)/add_any" source_file="model_par.py" source_line=79}
+  %negate.190 = f32[64,128]{1,0} negate(f32[64,128]{1,0} %multiply.189), metadata={op_type="neg" op_name="xmap(named_loss)/neg" source_file="model_par.py" source_line=42}
+  %add.192 = f32[64,128]{1,0} add(f32[64,128]{1,0} %negate.162, f32[64,128]{1,0} %negate.190), metadata={op_type="add_any" op_name="xmap(named_loss)/add_any" source_file="model_par.py" source_line=79}
+  %compare.55 = pred[128,64]{1,0} compare(f32[128,64]{1,0} %get-tuple-element.48, f32[128,64]{1,0} %reduce.54), direction=EQ, metadata={op_type="eq" op_name="xmap(named_loss)/eq" source_file="model_par.py" source_line=41}
+  %convert.56 = f32[128,64]{1,0} convert(pred[128,64]{1,0} %compare.55), metadata={op_type="convert_element_type" op_name="xmap(named_loss)/convert_element_type[ new_dtype=float32\n                                       weak_type=False ]" source_file="model_par.py" source_line=41}
+  %constant.57 = f32[] constant(0), metadata={op_type="reduce_sum" op_name="xmap(named_loss)/reduce_sum[ axes=(  ) ]" source_file="model_par.py" source_line=41}
+  %reduce.62 = f32[128,64]{1,0} reduce(f32[128,64]{1,0} %convert.56, f32[] %constant.57), dimensions={}, to_apply=%primitive_computation_add.58, metadata={op_type="reduce_sum" op_name="xmap(named_loss)/reduce_sum[ axes=(  ) ]" source_file="model_par.py" source_line=41}
+  %transpose.193 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %reduce.62), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=41}
+  %divide.194 = f32[64,128]{1,0} divide(f32[64,128]{1,0} %add.192, f32[64,128]{0,1} %transpose.193), metadata={op_type="div" op_name="xmap(named_loss)/div" source_file="model_par.py" source_line=41}
+  %transpose.195 = f32[64,128]{0,1} transpose(f32[128,64]{1,0} %convert.56), dimensions={1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(1, 0) ]" source_file="model_par.py" source_line=41}
+  %multiply.196 = f32[64,128]{1,0} multiply(f32[64,128]{1,0} %divide.194, f32[64,128]{0,1} %transpose.195), metadata={op_type="mul" op_name="xmap(named_loss)/mul" source_file="model_par.py" source_line=41}
+  %add.197 = f32[64,128]{1,0} add(f32[64,128]{1,0} %add.191, f32[64,128]{1,0} %multiply.196), metadata={op_type="add_any" op_name="xmap(named_loss)/add_any" source_file="model_par.py" source_line=79}
+  %dot.213 = f32[64,128,1024]{2,1,0} dot(f32[64,128]{1,0} %add.197, f32[1024,64]{1,0} %reshape.19), lhs_batch_dims={0}, lhs_contracting_dims={}, rhs_batch_dims={1}, rhs_contracting_dims={}, metadata={op_type="dot_general" op_name="xmap(named_loss)/dot_general[ dimension_numbers=(((), ()), ((0,), (1,)))\n                              precision=None\n                              preferred_element_type=None ]" source_file="model_par.py" source_line=39}
+  %transpose.214 = f32[1024,64,128]{0,2,1} transpose(f32[64,128,1024]{2,1,0} %dot.213), dimensions={2,0,1}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(2, 0, 1) ]" source_file="model_par.py" source_line=79}
+  %constant.215 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 1)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %reduce.220 = f32[1024,128]{1,0} reduce(f32[1024,64,128]{0,2,1} %transpose.214, f32[] %constant.215), dimensions={1}, to_apply=%primitive_computation_add.216, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 1)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %all-reduce.225 = f32[1024,128]{1,0} all-reduce(f32[1024,128]{1,0} %reduce.220), replica_groups={{0,1},{2,3},{4,5},{6,7}}, to_apply=%primitive_computation_add.221, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 1)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %tuple.226 = (f32[1024,128]{1,0}) tuple(f32[1024,128]{1,0} %all-reduce.225), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 1)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %get-tuple-element.227 = f32[1024,128]{1,0} get-tuple-element((f32[1024,128]{1,0}) %tuple.226), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'z\', 1)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %constant.228 = f32[] constant(0), metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                   shape=(128,) ]" source_file="model_par.py" source_line=38}
+  %broadcast.229 = f32[128]{0} broadcast(f32[] %constant.228), dimensions={}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(  )\n                                   shape=(128,) ]" source_file="model_par.py" source_line=38}
+  %broadcast.231 = f32[1024,128]{1,0} broadcast(f32[128]{0} %broadcast.229), dimensions={1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(1,)\n                                   shape=(1024, 128) ]" source_file="model_par.py" source_line=38}
+  %select.232 = f32[1024,128]{0,1} select(pred[1024,128]{0,1} %transpose.230, f32[1024,128]{1,0} %get-tuple-element.227, f32[1024,128]{1,0} %broadcast.231), metadata={op_type="select" op_name="xmap(named_loss)/select" source_file="model_par.py" source_line=38}
+  %dot.233 = f32[128,1024,5120]{2,1,0} dot(f32[1024,128]{0,1} %select.232, f32[5120,128]{1,0} %reshape.21), lhs_batch_dims={1}, lhs_contracting_dims={}, rhs_batch_dims={1}, rhs_contracting_dims={}, metadata={op_type="dot_general" op_name="xmap(named_loss)/dot_general[ dimension_numbers=(((), ()), ((1,), (1,)))\n                              precision=None\n                              preferred_element_type=None ]" source_file="model_par.py" source_line=38}
+  %transpose.234 = f32[5120,1024,128]{0,1,2} transpose(f32[128,1024,5120]{2,1,0} %dot.233), dimensions={2,1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(2, 1, 0) ]" source_file="model_par.py" source_line=79}
+  %constant.235 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %reduce.240 = f32[5120,1024]{1,0} reduce(f32[5120,1024,128]{0,1,2} %transpose.234, f32[] %constant.235), dimensions={2}, to_apply=%primitive_computation_add.236, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %all-reduce.245 = f32[5120,1024]{1,0} all-reduce(f32[5120,1024]{1,0} %reduce.240), replica_groups={{0,2,4,6},{1,3,5,7}}, to_apply=%primitive_computation_add.241, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %tuple.246 = (f32[5120,1024]{1,0}) tuple(f32[5120,1024]{1,0} %all-reduce.245), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %get-tuple-element.247 = f32[5120,1024]{1,0} get-tuple-element((f32[5120,1024]{1,0}) %tuple.246), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %broadcast.248 = f32[5120,1024,1,1]{3,2,1,0} broadcast(f32[5120,1024]{1,0} %get-tuple-element.247), dimensions={0,1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(0, 1)\n                                   shape=(5120, 1024, 1, 1) ]" source_file="model_par.py" source_line=79}
+  %transpose.252 = f32[5120,1,1024,1]{3,1,2,0} transpose(f32[5120,1024,1,1]{3,2,1,0} %broadcast.248), dimensions={0,2,1,3}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(0, 2, 1, 3) ]" source_file="model_par.py" source_line=79}
+  %reshape.253 = f32[5120,1,1024]{2,1,0} reshape(f32[5120,1,1024,1]{3,1,2,0} %transpose.252), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(5120, 1, 1024) ]" source_file="model_par.py" source_line=79}
+  %reshape.255 = f32[5120,1024]{1,0} reshape(f32[5120,1,1024]{2,1,0} %reshape.253), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(5120, 1024) ]" source_file="model_par.py" source_line=79}
+  %dot.198 = f32[128,64,1024]{2,1,0} dot(f32[64,128]{1,0} %add.197, f32[1024,128]{1,0} %get-tuple-element.37), lhs_batch_dims={1}, lhs_contracting_dims={}, rhs_batch_dims={1}, rhs_contracting_dims={}, metadata={op_type="dot_general" op_name="xmap(named_loss)/dot_general[ dimension_numbers=(((), ()), ((1,), (1,)))\n                              precision=None\n                              preferred_element_type=None ]" source_file="model_par.py" source_line=39}
+  %transpose.199 = f32[1024,64,128]{0,1,2} transpose(f32[128,64,1024]{2,1,0} %dot.198), dimensions={2,1,0}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(2, 1, 0) ]" source_file="model_par.py" source_line=79}
+  %constant.200 = f32[] constant(0), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %reduce.205 = f32[1024,64]{1,0} reduce(f32[1024,64,128]{0,1,2} %transpose.199, f32[] %constant.200), dimensions={2}, to_apply=%primitive_computation_add.201, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %all-reduce.210 = f32[1024,64]{1,0} all-reduce(f32[1024,64]{1,0} %reduce.205), replica_groups={{0,2,4,6},{1,3,5,7}}, to_apply=%primitive_computation_add.206, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %tuple.211 = (f32[1024,64]{1,0}) tuple(f32[1024,64]{1,0} %all-reduce.210), metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %get-tuple-element.212 = f32[1024,64]{1,0} get-tuple-element((f32[1024,64]{1,0}) %tuple.211), index=0, metadata={op_type="psum" op_name="xmap(named_loss)/psum[ axes=(\'x\', 2)\n                       axis_index_groups=None ]" source_file="model_par.py" source_line=79}
+  %broadcast.249 = f32[1024,64,1,1]{3,2,1,0} broadcast(f32[1024,64]{1,0} %get-tuple-element.212), dimensions={0,1}, metadata={op_type="broadcast_in_dim" op_name="xmap(named_loss)/broadcast_in_dim[ broadcast_dimensions=(0, 1)\n                                   shape=(1024, 64, 1, 1) ]" source_file="model_par.py" source_line=79}
+  %transpose.250 = f32[1024,1,64,1]{3,1,2,0} transpose(f32[1024,64,1,1]{3,2,1,0} %broadcast.249), dimensions={0,2,1,3}, metadata={op_type="transpose" op_name="xmap(named_loss)/transpose[ permutation=(0, 2, 1, 3) ]" source_file="model_par.py" source_line=79}
+  %reshape.251 = f32[1024,1,64]{2,1,0} reshape(f32[1024,1,64,1]{3,1,2,0} %transpose.250), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(1024, 1, 64) ]" source_file="model_par.py" source_line=79}
+  %reshape.254 = f32[1024,64]{1,0} reshape(f32[1024,1,64]{2,1,0} %reshape.251), metadata={op_type="reshape" op_name="xmap(named_loss)/reshape[ dimensions=None\n                          new_sizes=(1024, 64) ]" source_file="model_par.py" source_line=79}
+  ROOT %tuple.256 = (f32[5120,1024]{1,0}, f32[1024,64]{1,0}) tuple(f32[5120,1024]{1,0} %reshape.255, f32[1024,64]{1,0} %reshape.254)
+}
+
